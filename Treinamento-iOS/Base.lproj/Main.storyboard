@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NMN-qz-Tkn">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -18,26 +18,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pPI-HR-9VU">
-                                <rect key="frame" x="67" y="815" width="237" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pPI-HR-9VU">
+                                <rect key="frame" x="16" y="800" width="334" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fdj-R5-0LK">
-                                <rect key="frame" x="312" y="814" width="36" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fdj-R5-0LK">
+                                <rect key="frame" x="358" y="800" width="40" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="o8Z-lS-NMl"/>
+                                </constraints>
                                 <state key="normal" title="Send"/>
                                 <connections>
                                     <action selector="send:" destination="NMN-qz-Tkn" eventType="touchUpInside" id="ofQ-2f-Gno"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wjO-LL-HV4">
+                                <rect key="frame" x="0.0" y="44" width="414" height="740"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gE5-Ku-BqH" firstAttribute="trailing" secondItem="wjO-LL-HV4" secondAttribute="trailing" id="1AA-yO-lQZ"/>
+                            <constraint firstItem="fdj-R5-0LK" firstAttribute="centerY" secondItem="pPI-HR-9VU" secondAttribute="centerY" id="2ML-2L-cBA"/>
+                            <constraint firstItem="fdj-R5-0LK" firstAttribute="leading" secondItem="pPI-HR-9VU" secondAttribute="trailing" constant="8" id="4Xx-br-nsd"/>
+                            <constraint firstItem="pPI-HR-9VU" firstAttribute="leading" secondItem="gE5-Ku-BqH" secondAttribute="leading" constant="16" id="9MP-bV-hv1"/>
+                            <constraint firstItem="wjO-LL-HV4" firstAttribute="leading" secondItem="gE5-Ku-BqH" secondAttribute="leading" id="MJO-ti-oUv"/>
+                            <constraint firstItem="gE5-Ku-BqH" firstAttribute="bottom" secondItem="pPI-HR-9VU" secondAttribute="bottom" constant="32" id="SO3-A9-r36"/>
+                            <constraint firstItem="pPI-HR-9VU" firstAttribute="top" secondItem="wjO-LL-HV4" secondAttribute="bottom" constant="16" id="b7w-Kl-68t"/>
+                            <constraint firstItem="wjO-LL-HV4" firstAttribute="top" secondItem="gE5-Ku-BqH" secondAttribute="top" id="upE-Zd-wvy"/>
+                            <constraint firstItem="gE5-Ku-BqH" firstAttribute="trailing" secondItem="fdj-R5-0LK" secondAttribute="trailing" constant="16" id="v68-LA-Sm5"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="gE5-Ku-BqH"/>
                     </view>
                     <connections>
+                        <outlet property="tableView" destination="wjO-LL-HV4" id="4my-3C-hd0"/>
                         <outlet property="username" destination="pPI-HR-9VU" id="Moe-TA-E6U"/>
                     </connections>
                 </viewController>
